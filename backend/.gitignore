@@ -1,0 +1,8 @@
+.env
+*.json
+*credentials*.json
+__pycache__/
+venv/
+*.pyc
+static/screenshots/*.png
+

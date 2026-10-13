@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* Explicit UI/UX Color System */
+  --primary: #4F7DF3;
+  --primary-hover: #3D68D8;
+  --page-background: #F5F8FD;
+  --surface: #FFFFFF;
+  --surface-soft: #EDF3FF;
+  --text-primary: #243247;
+  --text-secondary: #718096;
+  --text-muted: #94A3B8;
+  --border: #E4EAF2;
+  --border-light: #E4EAF2;
+  --success: #19966B;
+  --warning: #D99A2B;
+  --danger: #D95757;
+  --error: #D95757;
+
+  /* Secondary accents */
+  --accent-soft: #F0F5FF;
+  --navy-contrast: #152238;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(36, 50, 71, 0.05);
+  --shadow-md: 0 4px 14px rgba(36, 50, 71, 0.07);
+  --shadow-lg: 0 10px 25px -4px rgba(36, 50, 71, 0.1);
+  --shadow-modal: 0 20px 40px -8px rgba(36, 50, 71, 0.18);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--page-background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Card & Surface Panels */
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.card-surface:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-soft {
+  background: var(--surface-soft);
+  border: 1px solid #D6E4FF;
+  border-radius: var(--radius-md);
+}
+
+/* Glass panel compatibility for existing components */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(79, 125, 243, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(79, 125, 243, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-soft);
+  border-color: #C5D8FC;
+  color: var(--primary);
+}
+
+.btn-danger {
+  background: #FFF1F0;
+  color: var(--danger);
+  border: 1px solid #FFCCC7;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: #FFFFFF;
+}
+
+.btn-success {
+  background: #ECFDF5;
+  color: var(--success);
+  border: 1px solid #A7F3D0;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+  background: var(--success);
+  color: #FFFFFF;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-blue {
+  background: #EDF3FF;
+  color: var(--primary);
+  border: 1px solid #D1E1FF;
+}
+
+.badge-green {
+  background: #E8F8F0;
+  color: var(--success);
+  border: 1px solid #B8E8D0;
+}
+
+.badge-amber {
+  background: #FFF8E6;
+  color: var(--warning);
+  border: 1px solid #FFE4A0;
+}
+
+.badge-red {
+  background: #FEECEB;
+  color: var(--danger);
+  border: 1px solid #FDC8C6;
+}
+
+.badge-gray {
+  background: #F1F4F9;
+  color: var(--text-secondary);
+  border: 1px solid #E1E6EE;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 125, 243, 0.15);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-loader {
+  animation: spin 1s linear infinite;
+}
+
+/* =====================================================================
+   PROFESSIONAL CURSOR & HOVER MICRO-INTERACTIONS
+   ===================================================================== */
+
+/* Subtle pointer feedback for interactive CRM elements */
+button,
+a,
+select,
+input[type="checkbox"],
+input[type="radio"],
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-success,
+.clickable-row {
+  cursor: pointer;
+}
+
+/* Clear grab/grabbing feedback for draggable Kanban cards */
+[draggable="true"] {
+  cursor: grab !important;
+  user-select: none;
+  transition: transform 0.16s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+[draggable="true"]:active {
+  cursor: grabbing !important;
+  transform: scale(1.015);
+  box-shadow: 0 8px 20px -3px rgba(36, 50, 71, 0.16) !important;
+}
+
+/* Restrained hover transitions and elevation for clickable surfaces */
+.card-surface {
+  transition: transform 0.18s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card-surface:hover {
+  border-color: #D6E4FF;
+}
+
+/* Subtle elevation for interactive lead cards & items */
+.card-interactive {
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px -2px rgba(36, 50, 71, 0.08);
+  border-color: #C5D8FC;
+}
+
+/* Accessible focus indicators for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Link button styling */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease;
+}
+
+.btn-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Respect prefers-reduced-motion: reduce */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
+
+/* Disable hover effects on touch-only devices to prevent sticky hover states */
+@media (hover: none) and (pointer: coarse) {
+  .card-surface:hover,
+  .card-interactive:hover,
+  .btn-primary:hover,
+  [draggable="true"]:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+}
+
